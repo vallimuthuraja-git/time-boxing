@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Time Box - Daily Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="document">
+        <button class="settings-btn" onclick="toggleSettings()">&#9881;</button>
+        <div class="settings-menu" id="settingsMenu">
+            <h3>Download PDF</h3>
+            <label>
+                <button class="download-btn" onclick="window.print()">Download &#8681;</button>
+            </label>
+            <h3>Logo Corner Style</h3>
+            <label>
+                <input type="radio" name="cornerStyle" value="rounded" checked onchange="changeLogoStyle(3)"> Rounded Corners
+            </label>
+            <label>
+                <input type="radio" name="cornerStyle" value="pointy" onchange="changeLogoStyle(0)"> Pointy Corners
+            </label>
+
+        </div>
+        <header class="header">
+            <!-- Logo and Title Group - Keep Together for Design Consistency -->
+            <div class="logo-section">
+                <!-- Logo Icon -->
+                <div class="logo">
+                    <svg viewBox="0 0 56 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="7" width="46" height="68" rx="3" stroke="#000" stroke-width="2" fill="none"/>
+                        <line x1="9" y1="14" x2="47" y2="68" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="47" y1="14" x2="9" y2="68" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <!-- Logo Text -->
+                <div class="title">
+                    <span>The</span>
+                    <span>Time</span>
+                    <span>Box.</span>
+                </div>
+            </div>
+            <!-- End Logo and Title Group -->
+            <div class="settings-section">
+                <div class="date-field">
+                    <label for="dateInput" class="date-label">Date</label>
+                    <input type="text" id="dateInput" class="date-input">
+                </div>
+            </div>
+
+        </header>
+
+        <div class="content-grid">
+            <div class="left-column">
+                <div class="priorities-section">
+                    <h2 class="section-title">Top Priorities</h2>
+                    <div class="priorities-list">
+                        <input type="text" class="priority-input" placeholder="Priority 1" id="priority1">
+                        <input type="text" class="priority-input" placeholder="Priority 2" id="priority2">
+                        <input type="text" class="priority-input" placeholder="Priority 3" id="priority3">
+                        <input type="text" class="priority-input" placeholder="Priority 4" id="priority4">
+                    </div>
+                </div>
+
+                <div class="brain-section">
+                    <h2 class="section-title">Brain Dump</h2>
+                    <textarea class="brain-dump" placeholder="Jot down ideas, reminders, thoughts..." id="brainDump"></textarea>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="time-grid">
+                    <div class="time-labels">
+                        <span></span>
+                        <span>:00</span>
+                        <span>:30</span>
+                    </div>
+
+
+
+                    <div class="time-row">
+                        <div class="hour-cell">5</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="5:00 AM" id="time5-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="5:30 AM" id="time5-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">6</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="6:00 AM" id="time6-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="6:30 AM" id="time6-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">7</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="7:00 AM" id="time7-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="7:30 AM" id="time7-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">8</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="8:00 AM" id="time8-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="8:30 AM" id="time8-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">9</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="9:00" id="time9-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="9:30" id="time9-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">10</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="10:00" id="time10-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="10:30" id="time10-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">11</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="11:00" id="time11-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="11:30" id="time11-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">12</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="12:00" id="time12-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="12:30" id="time12-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">13</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="1:00 PM" id="time13-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="1:30 PM" id="time13-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">14</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="2:00 PM" id="time14-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="2:30 PM" id="time14-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">15</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="3:00 PM" id="time15-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="3:30 PM" id="time15-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">16</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="4:00 PM" id="time16-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="4:30 PM" id="time16-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">17</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="5:00 PM" id="time17-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="5:30 PM" id="time17-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">18</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="6:00 PM" id="time18-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="6:30 PM" id="time18-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">19</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="7:00 PM" id="time19-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="7:30 PM" id="time19-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">20</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="8:00 PM" id="time20-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="8:30 PM" id="time20-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">21</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="9:00 PM" id="time21-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="9:30 PM" id="time21-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">22</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="10:00 PM" id="time22-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="10:30 PM" id="time22-30" rows="2"></textarea></div>
+                    </div>
+                    <div class="time-row">
+                        <div class="hour-cell">23</div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="11:00 PM" id="time23-00" rows="2"></textarea></div>
+                        <div class="time-cell"><textarea class="time-input" placeholder="11:30 PM" id="time23-30" rows="2"></textarea></div>
+                    </div>
+
+                </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
